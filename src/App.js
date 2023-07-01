@@ -3,6 +3,8 @@ import { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Sky, MapControls } from '@react-three/drei';
 import { Physics } from '@react-three/cannon';
+import { OBJLoader} from "three/examples/jsm/loaders/OBJLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 // Import CSS
 import './App.css';
@@ -73,6 +75,31 @@ function App() {
 
 	useEffect(() => {
 		loadBlockchainData()
+
+		/*let loadedModel;
+		const glftLoader = new OBJLoader();
+		glftLoader.load('./assets/Models/Mini_temple/obj/objTemple.obj', (gltfScene) => {
+			loadedModel = gltfScene;
+			// console.log(loadedModel);
+
+			// gltfScene.scene.rotation.y = Math.PI / 8;
+			gltfScene.scene.position.y = 3;
+			gltfScene.scene.scale.set(100, 10, 10);
+			test.scene.add(gltfScene.scene);
+		});*/
+
+		// let loadedModel;
+		// const glftLoader = new GLTFLoader();
+		// glftLoader.load('./assets/Models/Runic/scene.gltf', (gltfScene) => {
+		// 	loadedModel = gltfScene;
+		// 	console.log(loadedModel);
+		//
+		// 	// gltfScene.scene.rotation.y = Math.PI / 8;
+		// 	// gltfScene.scene.position.y = 3;
+		// 	gltfScene.scene.scale.set(10, 10, 100);
+		// 	test.scene.add(gltfScene.scene);
+		// });
+
 	}, [account])
 
 	const buyHandler = async (_id) => {

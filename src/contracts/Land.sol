@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Land is ERC721 {
     uint256 public cost = 1 ether;
-    uint256 public maxSupply = 5;
+    uint256 public maxSupply = 7;
     uint256 public totalSupply = 0;
 
     struct Building {
@@ -36,10 +36,16 @@ contract Land is ERC721 {
             Building("University", address(0x0), 0, -10, 0, 10, 5, 3)
         );
         buildings.push(
-            Building("Shopping Plaza 1", address(0x0), 10, 0, 0, 5, 25, 5)
+            Building("Shopping Plaza 1", address(0x0), 10, 0, 0, 5, 25, 15)
         );
         buildings.push(
-            Building("Shopping Plaza 2", address(0x0), -10, 0, 0, 5, 25, 5)
+            Building("Parking", address(0x0), -10, 0, 0, 5, 25, 3)
+        );
+        buildings.push(
+            Building("Villa 1", address(0x0), -20, 0, 0, 5, 15, 5)
+        );
+        buildings.push(
+            Building("Villa 2", address(0x0), -20, 30, 0, 5, 15, 5)
         );
     }
 
